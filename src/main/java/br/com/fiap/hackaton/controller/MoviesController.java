@@ -4,7 +4,6 @@ import br.com.fiap.hackaton.application.MovieApplication;
 import br.com.fiap.hackaton.dto.MovieDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.CrossOrigin;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
