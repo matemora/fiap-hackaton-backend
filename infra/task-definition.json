@@ -1,13 +1,14 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:653839320186:task-definition/hackaton-app:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:653839320186:task-definition/hackaton-app:5",
     "containerDefinitions": [
         {
             "name": "hackaton-app",
-            "image": "IMAGE",
+            "image": "653839320186.dkr.ecr.us-east-1.amazonaws.com/fiap-hackaton-backend:4d38015b7376f474397f2756454dbefbdf58fce0",
             "cpu": 1024,
             "memory": 2048,
             "portMappings": [
                 {
+                    "name": "hackaton-app-8080-tcp",
                     "containerPort": 8080,
                     "hostPort": 8080,
                     "protocol": "tcp"
@@ -29,10 +30,9 @@
         }
     ],
     "family": "hackaton-app",
-    "taskRoleArn": "arn:aws:iam::653839320186:role/ecs-task-role",
-    "executionRoleArn": "arn:aws:iam::653839320186:role/ecs-task-role",
+    "executionRoleArn": "arn:aws:iam::653839320186:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 5,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -43,10 +43,13 @@
             "name": "ecs.capability.execution-role-awslogs"
         },
         {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
+            "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -68,7 +71,7 @@
     ],
     "cpu": "1024",
     "memory": "2048",
-    "registeredAt": "2023-07-01T17:10:08.754Z",
+    "registeredAt": "2023-07-01T18:20:30.028Z",
     "registeredBy": "arn:aws:iam::653839320186:root",
     "tags": []
 }
