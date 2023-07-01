@@ -3,21 +3,5 @@ version: '3'
 services:
   app:
     build: .
-    volumes:
-      - .:/app
     ports:
       - 8080:8080
-    environment:
-      - DB_USERNAME=root
-      - DB_HOSTNAME=database
-      - DB_PORT=3306
-      - DB_PASSWORD=123456
-      - DB_NAME=hackaton
-    links:
-      - "mysql:database"
-  mysql:
-    image: mysql:8
-    ports:
-      - 3306:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
